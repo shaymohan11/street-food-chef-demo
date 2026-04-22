@@ -6,44 +6,35 @@
   <title>The Street Food Chef — Mexican Canteen, Sheffield</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --red:       #C8102E;
-      --red-dark:  #9E0C24;
-      --yellow:    #FFD700;
-      --sand:      #D4A853;
-      --bg:        #160800;
-      --bg-near:   #220C01;
-      --bg-warm:   #F5ECD7;
-      --text:      #FFF8E7;
-      --muted:     rgba(255,248,231,.6);
-      --border:    rgba(255,248,231,.1);
-      --radius:    14px;
+      --red:      #C8102E;
+      --red-dark: #9E0C24;
+      --yellow:   #FFD700;
+      --sand:     #D4A853;
+      --bg:       #180900;
+      --bg-near:  #230D02;
+      --bg-off:   #1C0A01;
+      --text:     #FFF8E7;
+      --muted:    rgba(255,248,231,.58);
+      --border:   rgba(255,248,231,.1);
     }
 
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    img { display: block; max-width: 100%; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+    img  { display: block; max-width: 100%; }
+    a    { text-decoration: none; color: inherit; }
+    ul   { list-style: none; }
     .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* ── NAV ── */
+    /* ─── NAV ─── */
     #navbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 900;
-      background: rgba(22,8,0,.92);
-      backdrop-filter: blur(12px);
+      background: rgba(24,9,0,.93);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
       transition: background .3s;
     }
@@ -52,17 +43,18 @@
       display: flex; align-items: center; gap: 32px;
       padding: 0 24px; height: 66px;
     }
-    .nav-logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-    .nav-logo-icon { font-size: 1.6rem; line-height: 1; }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+    }
+    .nav-logo-img { height: 38px; width: auto; }
     .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
     .nav-logo-main {
       font-family: 'Anton', sans-serif;
-      font-size: 1.05rem; letter-spacing: .06em;
+      font-size: 1rem; letter-spacing: .06em;
       color: var(--yellow);
     }
     .nav-logo-sub {
-      font-family: 'Fredoka One', cursive;
-      font-size: .6rem; letter-spacing: .18em;
+      font-size: .6rem; letter-spacing: .16em;
       color: var(--muted); text-transform: uppercase;
     }
     .nav-links {
@@ -75,8 +67,8 @@
     .nav-links a:hover { color: var(--text); }
     .nav-order {
       background: var(--red); color: #fff;
-      font-size: .85rem; font-weight: 600;
-      padding: 9px 22px; border-radius: 8px;
+      font-size: .85rem; font-weight: 700;
+      padding: 9px 22px;
       white-space: nowrap; flex-shrink: 0;
       transition: background .2s;
     }
@@ -88,11 +80,10 @@
     }
     .nav-hamburger span {
       display: block; width: 24px; height: 2px;
-      background: var(--text); border-radius: 2px;
-      transition: all .3s;
+      background: var(--text);
     }
 
-    /* ── MOBILE MENU ── */
+    /* ─── MOBILE MENU ─── */
     #mob-menu {
       display: none; position: fixed; inset: 0; z-index: 950;
       background: var(--bg); flex-direction: column;
@@ -108,28 +99,25 @@
     #mob-menu ul a { font-size: 1.4rem; font-family: 'Anton', sans-serif; letter-spacing: .05em; }
     .mob-order {
       background: var(--red); color: #fff !important;
-      padding: 12px 36px; border-radius: 8px;
+      padding: 12px 36px;
       font-size: 1rem !important; font-family: 'DM Sans', sans-serif !important;
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    /* ── HERO ── */
+    /* ─── HERO ─── */
     #hero {
       position: relative; min-height: 100vh;
       display: flex; flex-direction: column;
-      justify-content: flex-end; padding-bottom: 0;
-      overflow: hidden;
+      justify-content: flex-end; overflow: hidden;
     }
-    .hero-bg {
-      position: absolute; inset: 0;
-    }
+    .hero-bg { position: absolute; inset: 0; }
     .hero-bg img {
       width: 100%; height: 100%; object-fit: cover;
-      filter: brightness(.45) saturate(1.1);
+      filter: brightness(.4) saturate(1.1);
     }
     .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(22,8,0,.1) 0%, rgba(22,8,0,.55) 50%, rgba(22,8,0,.98) 100%);
+      background: linear-gradient(to bottom, rgba(24,9,0,.05) 0%, rgba(24,9,0,.5) 50%, rgba(24,9,0,.97) 100%);
     }
     .hero-body {
       position: relative; z-index: 2;
@@ -137,53 +125,48 @@
       padding: 0 24px; padding-top: 140px; padding-bottom: 60px;
     }
     .hero-eyebrow {
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.05rem; color: var(--yellow);
-      letter-spacing: .12em; margin-bottom: 18px;
+      font-size: .88rem; font-weight: 600;
+      color: var(--yellow); letter-spacing: .14em;
+      text-transform: uppercase; margin-bottom: 20px;
     }
     .hero-title {
       font-family: 'Anton', sans-serif;
-      font-size: clamp(3.2rem, 8vw, 7rem);
+      font-size: clamp(3.4rem, 8.5vw, 7.5rem);
       line-height: 1; letter-spacing: .01em;
-      margin-bottom: 8px;
-      color: var(--text);
+      color: var(--text); margin-bottom: 8px;
     }
-    .hero-title .crack-line {
-      display: block;
-    }
+    .hero-title .crack-line { display: block; }
     .hero-sub {
-      font-size: 1.1rem; color: var(--muted);
-      max-width: 520px; line-height: 1.65;
-      margin-bottom: 36px; margin-top: 18px;
+      font-size: 1.05rem; color: var(--muted);
+      max-width: 500px; line-height: 1.7;
+      margin-bottom: 36px; margin-top: 20px;
     }
     .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; }
+
     .btn-red {
       background: var(--red); color: #fff;
       font-weight: 700; font-size: .95rem;
-      padding: 14px 32px; border-radius: 10px;
-      border: none; cursor: pointer; display: inline-block;
-      transition: background .2s, transform .15s;
+      padding: 14px 32px; border: none; cursor: pointer;
+      display: inline-block; transition: background .2s, transform .15s;
     }
     .btn-red:hover { background: var(--red-dark); transform: translateY(-2px); }
     .btn-ghost {
       background: transparent;
-      border: 2px solid rgba(255,248,231,.35);
+      border: 2px solid rgba(255,248,231,.3);
       color: var(--text); font-weight: 600; font-size: .95rem;
-      padding: 13px 30px; border-radius: 10px;
-      display: inline-block; transition: border-color .2s, background .2s;
+      padding: 13px 30px; display: inline-block;
+      transition: border-color .2s;
     }
-    .btn-ghost:hover { border-color: var(--yellow); background: rgba(255,215,0,.06); }
+    .btn-ghost:hover { border-color: var(--yellow); }
 
     .hero-stats {
       position: relative; z-index: 2;
-      background: rgba(255,248,231,.05);
+      background: rgba(255,248,231,.04);
       border-top: 1px solid var(--border);
-      backdrop-filter: blur(8px);
     }
     .hero-stats-inner {
       max-width: 1200px; margin: 0 auto;
-      display: flex; flex-wrap: wrap;
-      padding: 0 24px;
+      display: flex; flex-wrap: wrap; padding: 0 24px;
     }
     .hstat {
       flex: 1; min-width: 120px;
@@ -193,183 +176,112 @@
       border-right: 1px solid var(--border);
     }
     .hstat:last-child { border-right: none; }
-    .hstat-n {
-      font-family: 'Anton', sans-serif; font-size: 1.6rem;
-      color: var(--yellow); line-height: 1;
-    }
+    .hstat-n { font-family: 'Anton', sans-serif; font-size: 1.6rem; color: var(--yellow); line-height: 1; }
     .hstat-l { font-size: .78rem; color: var(--muted); letter-spacing: .04em; }
 
-    /* ── TICKER ── */
+    /* ─── TICKER ─── */
     .ticker {
-      background: var(--red);
-      overflow: hidden; padding: 13px 0;
+      background: var(--red); overflow: hidden; padding: 13px 0;
       border-top: 3px solid var(--yellow);
       border-bottom: 3px solid var(--yellow);
     }
     .ticker-inner {
-      display: flex; align-items: center; gap: 0;
-      white-space: nowrap;
-      animation: ticker-scroll 30s linear infinite;
-      width: max-content;
+      display: flex; align-items: center;
+      white-space: nowrap; width: max-content;
+      animation: ticker-scroll 32s linear infinite;
     }
     .ticker-inner span {
-      font-family: 'Fredoka One', cursive;
-      font-size: .95rem; letter-spacing: .08em;
-      color: #fff; padding: 0 18px;
+      font-size: .88rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: #fff; padding: 0 20px;
     }
-    .ticker-inner .dot { color: var(--yellow); padding: 0 6px; }
-    @keyframes ticker-scroll {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
+    .ticker-inner .dot { color: var(--yellow); padding: 0 4px; font-size: .6rem; }
+    @keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-    /* ── SECTION HELPERS ── */
-    .section-dark   { background: var(--bg-near); padding: 96px 0; }
-    .section-red    { background: var(--red); padding: 96px 0; }
-    .section-warm   { background: var(--bg-warm); padding: 96px 0; color: #1A0800; }
-    .section-sand   { background: #2A1205; padding: 96px 0; }
-    .section-off    { background: #1E0B01; padding: 96px 0; }
+    /* ─── SECTIONS ─── */
+    .section-dark     { background: var(--bg-near); padding: 96px 0; }
+    .section-off      { background: var(--bg-off);  padding: 96px 0; }
+    .section-red      { background: var(--red);     padding: 96px 0; }
 
     .eyebrow-yellow {
-      font-family: 'Fredoka One', cursive;
-      font-size: .92rem; color: var(--yellow);
-      letter-spacing: .14em; text-transform: uppercase;
-      margin-bottom: 14px; display: block;
-    }
-    .eyebrow-red {
-      font-family: 'Fredoka One', cursive;
-      font-size: .92rem; color: var(--red);
-      letter-spacing: .14em; text-transform: uppercase;
+      font-size: .82rem; font-weight: 700; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--yellow);
       margin-bottom: 14px; display: block;
     }
     .eyebrow-white {
-      font-family: 'Fredoka One', cursive;
-      font-size: .92rem; color: rgba(255,255,255,.75);
-      letter-spacing: .14em; text-transform: uppercase;
+      font-size: .82rem; font-weight: 700; letter-spacing: .16em;
+      text-transform: uppercase; color: rgba(255,255,255,.7);
       margin-bottom: 14px; display: block;
     }
-
     h2 {
       font-family: 'Anton', sans-serif;
       font-size: clamp(2.2rem, 5vw, 3.6rem);
       line-height: 1.05; letter-spacing: .01em;
     }
-    h3 { font-family: 'Anton', sans-serif; font-size: 1.5rem; }
-
     .section-head-split {
       display: flex; align-items: flex-start;
       justify-content: space-between; gap: 40px;
       margin-bottom: 56px; flex-wrap: wrap;
     }
-    .head-desc {
-      max-width: 380px; color: var(--muted);
-      font-size: 1rem; line-height: 1.65;
-      padding-top: 8px;
-    }
-    .head-desc-dark { color: #6B3A1A; }
+    .head-desc { max-width: 360px; color: var(--muted); font-size: 1rem; line-height: 1.65; padding-top: 6px; }
 
-    /* ── CRACKED TEXT ── */
+    /* ─── CRACKED TEXT ─── */
     .crack-text {
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
-      background-size: 800px 400px;
-      background-repeat: repeat;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+      background-size: 1000px 400px; background-repeat: repeat;
     }
 
-    /* ── STORY ── */
-    .story-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px; align-items: center;
-    }
-    .story-img-stack { position: relative; }
-    .simg-main {
-      width: 100%; border-radius: 16px;
-      aspect-ratio: 4/3; object-fit: cover;
-      box-shadow: 0 24px 64px rgba(0,0,0,.5);
-    }
-    .simg-accent {
-      position: absolute; bottom: -28px; right: -28px;
-      width: 52%; border-radius: 12px;
-      aspect-ratio: 1; object-fit: cover;
+    /* ─── STORY ─── */
+    .story-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .story-img-stack { position: relative; padding-bottom: 30px; padding-right: 30px; }
+    .simg-main { width: 100%; aspect-ratio: 4/3; object-fit: cover; box-shadow: 0 24px 64px rgba(0,0,0,.5); }
+    .simg-secondary {
+      position: absolute; bottom: 0; right: 0;
+      width: 55%; aspect-ratio: 1; object-fit: cover;
       border: 4px solid var(--bg-near);
       box-shadow: 0 12px 40px rgba(0,0,0,.5);
     }
     .story-text-col p { color: var(--muted); line-height: 1.75; margin-bottom: 16px; font-size: .97rem; }
-    .story-badges {
-      display: flex; flex-wrap: wrap; gap: 10px;
-      margin: 24px 0;
-    }
+    .story-badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0; }
     .sbadge {
-      background: rgba(255,215,0,.08);
+      background: rgba(255,215,0,.07);
       border: 1px solid rgba(255,215,0,.2);
-      color: var(--yellow);
-      font-family: 'Fredoka One', cursive;
-      font-size: .82rem; letter-spacing: .06em;
-      padding: 7px 16px; border-radius: 100px;
+      color: var(--yellow); font-size: .8rem; font-weight: 600;
+      letter-spacing: .06em; padding: 7px 14px;
     }
-    .story-tagline {
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.15rem; color: var(--sand);
-      margin-top: 8px; font-style: italic;
-    }
+    .story-tagline { font-size: 1.05rem; color: var(--sand); font-style: italic; margin-top: 6px; }
 
-    /* ── MENU ── */
-    .tabs {
-      display: flex; flex-wrap: wrap; gap: 8px;
-      margin-bottom: 40px;
-    }
+    /* ─── MENU TABS ─── */
+    .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
     .tab {
-      font-family: 'Fredoka One', cursive;
-      font-size: .9rem; letter-spacing: .05em;
-      padding: 9px 22px; border-radius: 100px;
-      border: 2px solid var(--border);
+      font-size: .85rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      padding: 9px 22px; border: 2px solid var(--border);
       background: transparent; color: var(--muted);
       cursor: pointer; transition: all .2s;
     }
     .tab:hover { border-color: var(--yellow); color: var(--yellow); }
-    .tab.active {
-      background: var(--yellow); color: #1A0800;
-      border-color: var(--yellow); font-weight: 700;
-    }
+    .tab.active { background: var(--yellow); color: #180900; border-color: var(--yellow); }
 
-    .food-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 20px; display: none;
-    }
+    /* ─── FOOD GRID ─── */
+    .food-grid { display: none; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
     .food-grid.active { display: grid; }
 
     .food-card {
-      background: rgba(255,248,231,.04);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: transform .25s, box-shadow .25s;
+      background: rgba(255,248,231,.04); border: 1px solid var(--border);
+      overflow: hidden; transition: transform .25s, box-shadow .25s;
     }
-    .food-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,.45); }
-    .food-img {
-      aspect-ratio: 4/3; overflow: hidden;
-    }
-    .food-img img {
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform .4s;
-    }
-    .food-card:hover .food-img img { transform: scale(1.06); }
+    .food-card:hover { transform: translateY(-5px); box-shadow: 0 18px 44px rgba(0,0,0,.45); }
+    .food-img { aspect-ratio: 4/3; overflow: hidden; }
+    .food-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+    .food-card:hover .food-img img { transform: scale(1.05); }
     .food-info { padding: 18px; }
-    .food-info h3 {
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.05rem; color: var(--text);
-      margin-bottom: 6px; letter-spacing: .02em;
-    }
-    .food-info p { font-size: .84rem; color: var(--muted); line-height: 1.5; margin-bottom: 10px; }
+    .food-info h3 { font-family: 'Anton', sans-serif; font-size: 1.1rem; color: var(--text); margin-bottom: 7px; letter-spacing: .02em; }
+    .food-info p { font-size: .84rem; color: var(--muted); line-height: 1.55; margin-bottom: 10px; }
 
     .tag {
       display: inline-block; font-size: .72rem; font-weight: 700;
-      padding: 3px 10px; border-radius: 100px;
-      letter-spacing: .06em; text-transform: uppercase;
+      padding: 3px 10px; letter-spacing: .06em; text-transform: uppercase;
     }
     .tag-sig  { background: rgba(200,16,46,.2);  color: #FF6B82; }
     .tag-veg  { background: rgba(40,160,60,.18); color: #5CCC70; }
@@ -378,280 +290,168 @@
 
     .menu-note {
       margin-top: 48px; padding: 28px 32px;
-      background: rgba(255,248,231,.04);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      display: flex; flex-wrap: wrap;
-      align-items: center; gap: 16px;
+      background: rgba(255,248,231,.04); border: 1px solid var(--border);
+      display: flex; flex-wrap: wrap; align-items: center; gap: 16px;
     }
     .menu-note p { color: var(--muted); font-size: .9rem; flex: 1; min-width: 240px; }
     .btn-yellow-sm {
-      background: var(--yellow); color: #1A0800;
-      font-size: .85rem; font-weight: 700;
-      padding: 10px 22px; border-radius: 8px;
-      white-space: nowrap; transition: opacity .2s;
+      background: var(--yellow); color: #180900; font-size: .85rem; font-weight: 700;
+      padding: 10px 22px; white-space: nowrap; transition: opacity .2s; display: inline-block;
     }
     .btn-yellow-sm:hover { opacity: .88; }
     .btn-red-sm {
-      background: var(--red); color: #fff;
-      font-size: .85rem; font-weight: 700;
-      padding: 10px 22px; border-radius: 8px;
-      white-space: nowrap; transition: opacity .2s;
+      background: var(--red); color: #fff; font-size: .85rem; font-weight: 700;
+      padding: 10px 22px; white-space: nowrap; transition: opacity .2s; display: inline-block;
     }
     .btn-red-sm:hover { opacity: .88; }
 
-    /* ── AWARDS ── */
-    .awards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px; margin-top: 48px;
-    }
+    /* ─── AWARDS ─── */
+    .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; margin-top: 48px; background: rgba(255,255,255,.12); }
     .award-card {
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: var(--radius);
-      padding: 28px 24px; text-align: center;
+      background: rgba(200,16,46,.85); padding: 32px 24px; text-align: center;
     }
-    .award-icon { font-size: 2rem; margin-bottom: 12px; }
-    .award-card h4 {
-      font-family: 'Fredoka One', cursive;
-      font-size: 1rem; color: #fff; margin-bottom: 6px;
-    }
-    .award-card p { font-size: .82rem; color: rgba(255,255,255,.7); }
+    .award-icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .award-card h4 { font-family: 'Anton', sans-serif; font-size: 1.05rem; color: #fff; margin-bottom: 7px; letter-spacing: .02em; }
+    .award-card p { font-size: .82rem; color: rgba(255,255,255,.72); line-height: 1.5; }
 
-    /* ── ORDER BANNER ── */
-    .order-banner-inner {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 48px; align-items: center;
-    }
-    .order-banner-text h2 { color: #fff; margin-bottom: 16px; }
-    .order-banner-text p { color: rgba(255,255,255,.8); line-height: 1.65; margin-bottom: 28px; }
+    /* ─── ORDER BANNER ─── */
+    .order-banner-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .order-banner-text h2 { margin-bottom: 18px; }
+    .order-banner-text p { color: var(--muted); line-height: 1.7; margin-bottom: 30px; font-size: .97rem; }
     .order-btns { display: flex; flex-wrap: wrap; gap: 14px; }
-    .btn-white {
-      background: #fff; color: var(--red);
-      font-weight: 700; font-size: .92rem;
-      padding: 13px 26px; border-radius: 10px;
-      transition: opacity .2s; display: inline-block;
-    }
-    .btn-white:hover { opacity: .9; }
-    .btn-outline-white {
-      background: transparent;
-      border: 2px solid rgba(255,255,255,.5);
-      color: #fff; font-weight: 600; font-size: .92rem;
-      padding: 12px 26px; border-radius: 10px;
-      display: inline-block; transition: border-color .2s;
-    }
-    .btn-outline-white:hover { border-color: #fff; }
-    .order-banner-img img {
-      border-radius: 16px; width: 100%;
-      aspect-ratio: 4/3; object-fit: cover;
-    }
+    .order-banner-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
 
-    /* ── DELIVERY ── */
-    .delivery-logos {
-      display: flex; flex-wrap: wrap;
-      align-items: center; justify-content: center;
-      gap: 32px; margin-top: 40px;
+    /* ─── DELIVERY ─── */
+    .partner-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 24px; margin-top: 40px; }
+    .partner-logo {
+      background: rgba(255,248,231,.06); border: 1px solid var(--border);
+      padding: 20px 40px; font-weight: 700; font-size: .95rem; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--muted); transition: border-color .2s, color .2s;
     }
-    .delivery-logo {
-      background: rgba(255,248,231,.06);
-      border: 1px solid var(--border);
-      border-radius: 12px; padding: 18px 36px;
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.1rem; color: var(--muted);
-      transition: border-color .2s, color .2s;
-    }
-    .delivery-logo:hover { border-color: var(--yellow); color: var(--yellow); }
+    .partner-logo:hover { border-color: var(--yellow); color: var(--text); }
+    .partner-heading { font-family: 'Anton', sans-serif; font-size: 1.5rem; text-align: center; margin-bottom: 0; }
 
-    /* ── LOCATIONS ── */
-    .location-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 24px; margin-top: 48px;
+    /* ─── LOCATIONS ─── */
+    .country-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 48px; background: var(--border); }
+    .loc-tile {
+      background: var(--bg-near); overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: background .25s;
     }
-    .loc-card {
-      background: rgba(255,248,231,.04);
-      border: 1px solid var(--border);
-      border-radius: 18px; overflow: hidden;
-      transition: transform .25s;
-    }
-    .loc-card:hover { transform: translateY(-4px); }
-    .loc-card-img {
-      aspect-ratio: 16/9; overflow: hidden;
-    }
-    .loc-card-img img {
-      width: 100%; height: 100%; object-fit: cover;
-      filter: brightness(.75) saturate(1.1);
-      transition: transform .4s;
-    }
-    .loc-card:hover .loc-card-img img { transform: scale(1.04); }
-    .loc-card-body { padding: 28px; }
-    .loc-tag {
-      font-family: 'Fredoka One', cursive;
-      font-size: .78rem; letter-spacing: .1em;
-      color: var(--yellow); text-transform: uppercase;
-      margin-bottom: 8px; display: block;
-    }
-    .loc-card-body h3 { margin-bottom: 10px; font-size: 1.4rem; }
-    .loc-card-body p { color: var(--muted); font-size: .9rem; line-height: 1.6; margin-bottom: 6px; }
-    .loc-hours {
-      margin-top: 16px; border-top: 1px solid var(--border); padding-top: 16px;
-    }
-    .hours-row {
-      display: flex; justify-content: space-between;
-      font-size: .85rem; padding: 4px 0;
-      color: var(--muted);
-    }
+    .loc-tile:hover { background: #2C1005; }
+    .loc-tile-img { aspect-ratio: 16/9; overflow: hidden; }
+    .loc-tile-img img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.7); transition: transform .4s, filter .4s; }
+    .loc-tile:hover .loc-tile-img img { transform: scale(1.04); filter: brightness(.85); }
+    .loc-tile-body { padding: 28px; }
+    .loc-tag { font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--yellow); margin-bottom: 8px; display: block; }
+    .loc-tile-body h3 { font-family: 'Anton', sans-serif; font-size: 1.5rem; margin-bottom: 10px; }
+    .loc-tile-body p { color: var(--muted); font-size: .9rem; line-height: 1.6; margin-bottom: 5px; }
+    .loc-hours { margin-top: 18px; border-top: 1px solid var(--border); padding-top: 16px; }
+    .hours-row { display: flex; justify-content: space-between; font-size: .84rem; padding: 5px 0; color: var(--muted); }
     .hours-row span:last-child { color: var(--text); }
-    .closed { color: rgba(255,248,231,.3) !important; }
+    .btn-loc { display: inline-block; margin-top: 18px; background: var(--red); color: #fff; font-weight: 700; font-size: .82rem; letter-spacing: .06em; padding: 9px 20px; transition: background .2s; }
+    .btn-loc:hover { background: var(--red-dark); }
 
-    /* ── REVIEWS ── */
-    .reviews-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px; margin-top: 48px;
-    }
-    .review-card {
-      background: rgba(255,248,231,.04);
-      border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 28px;
-    }
-    .review-stars { color: var(--yellow); font-size: 1rem; margin-bottom: 14px; }
-    .review-card p { color: var(--muted); font-size: .92rem; line-height: 1.7; margin-bottom: 16px; }
-    .review-name { font-size: .8rem; color: var(--sand); font-weight: 600; }
+    /* ─── REVIEWS ─── */
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; margin-top: 48px; background: var(--border); }
+    .review-card { background: var(--bg-near); padding: 32px; }
+    .review-stars { color: var(--yellow); font-size: .9rem; margin-bottom: 14px; letter-spacing: .1em; }
+    .review-card p { color: var(--muted); font-size: .92rem; line-height: 1.75; margin-bottom: 16px; }
+    .review-name { font-size: .78rem; color: var(--sand); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
 
-    /* ── CONTACT ── */
-    .contact-layout {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 64px;
-    }
-    .contact-left h2 { margin-bottom: 16px; }
-    .contact-left > p { color: var(--muted); line-height: 1.7; margin-bottom: 28px; font-size: .97rem; }
-    .clinks { display: flex; flex-direction: column; gap: 14px; }
+    /* ─── CONTACT ─── */
+    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+    .contact-left h2 { margin-bottom: 18px; }
+    .contact-left > p { color: var(--muted); line-height: 1.7; margin-bottom: 28px; }
+    .clinks { display: flex; flex-direction: column; gap: 2px; }
     .clink {
       display: flex; align-items: center; gap: 16px;
-      background: rgba(255,248,231,.04);
-      border: 1px solid var(--border);
-      border-radius: 12px; padding: 16px 20px;
-      transition: border-color .2s;
+      background: rgba(255,248,231,.04); border: 1px solid var(--border);
+      padding: 16px 20px; transition: border-color .2s, background .2s;
     }
-    .clink:hover { border-color: var(--yellow); }
-    .clink-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .clink:hover { border-color: var(--yellow); background: rgba(255,215,0,.04); }
+    .clink-icon { font-size: 1.2rem; flex-shrink: 0; }
     .clink div { display: flex; flex-direction: column; gap: 2px; }
-    .clink strong { font-size: .9rem; color: var(--text); }
-    .clink span { font-size: .8rem; color: var(--muted); }
+    .clink strong { font-size: .88rem; color: var(--text); }
+    .clink span   { font-size: .8rem; color: var(--muted); }
 
     .cform { display: flex; flex-direction: column; gap: 16px; }
     .cform-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .cform-group { display: flex; flex-direction: column; gap: 6px; }
-    .cform-group label { font-size: .82rem; color: var(--muted); font-weight: 500; }
-    .cform-group input,
-    .cform-group select,
-    .cform-group textarea {
-      background: rgba(255,248,231,.06);
-      border: 1px solid var(--border);
-      border-radius: 8px; color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-size: .9rem; padding: 11px 14px;
-      transition: border-color .2s; width: 100%;
+    .cform-group label { font-size: .8rem; color: var(--muted); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .cform-group input, .cform-group select, .cform-group textarea {
+      background: rgba(255,248,231,.05); border: 1px solid var(--border);
+      color: var(--text); font-family: 'DM Sans', sans-serif;
+      font-size: .9rem; padding: 11px 14px; transition: border-color .2s; width: 100%;
     }
-    .cform-group input:focus,
-    .cform-group select:focus,
-    .cform-group textarea:focus {
-      outline: none; border-color: var(--yellow);
-    }
-    .cform-group select option { background: #220C01; }
+    .cform-group input:focus, .cform-group select:focus, .cform-group textarea:focus { outline: none; border-color: var(--yellow); }
+    .cform-group select option { background: #230D02; }
 
-    /* ── NEWSLETTER ── */
+    /* ─── NEWSLETTER ─── */
     .nl-strip { background: var(--yellow); padding: 56px 0; }
-    .nl-inner {
-      display: flex; flex-wrap: wrap;
-      align-items: center; gap: 32px;
-      justify-content: space-between;
-    }
-    .nl-strip h3 {
-      font-family: 'Anton', sans-serif;
-      font-size: 2rem; color: #1A0800;
-    }
+    .nl-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 32px; justify-content: space-between; }
+    .nl-strip h3 { font-family: 'Anton', sans-serif; font-size: 2.2rem; color: #180900; }
     .nl-strip p { color: #5A2A0A; font-size: .95rem; margin-top: 6px; }
-    .nl-form { display: flex; gap: 10px; flex-wrap: wrap; }
+    .nl-form { display: flex; gap: 0; flex-wrap: wrap; }
     .nl-form input {
-      background: rgba(26,8,0,.12); border: 2px solid rgba(26,8,0,.2);
-      border-radius: 8px; color: #1A0800;
-      font-family: 'DM Sans', sans-serif;
-      font-size: .9rem; padding: 11px 16px; min-width: 260px;
+      background: rgba(24,9,0,.1); border: 2px solid rgba(24,9,0,.2);
+      color: #180900; font-family: 'DM Sans', sans-serif; font-size: .9rem;
+      padding: 12px 18px; min-width: 280px;
     }
-    .nl-form input::placeholder { color: rgba(26,8,0,.5); }
+    .nl-form input::placeholder { color: rgba(24,9,0,.45); }
     .nl-form input:focus { outline: none; border-color: var(--red); }
     .nl-form button {
-      background: var(--red); color: #fff;
-      border: none; border-radius: 8px;
-      font-weight: 700; font-size: .9rem;
-      padding: 11px 24px; cursor: pointer;
-      transition: background .2s;
+      background: var(--red); color: #fff; border: none;
+      font-weight: 700; font-size: .88rem; letter-spacing: .06em;
+      text-transform: uppercase; padding: 12px 28px; cursor: pointer; transition: background .2s;
     }
     .nl-form button:hover { background: var(--red-dark); }
 
-    /* ── FOOTER ── */
+    /* ─── FOOTER ─── */
     #footer { background: #0E0500; border-top: 1px solid var(--border); }
     .footer-inner {
       max-width: 1200px; margin: 0 auto;
       display: grid; grid-template-columns: 1.5fr repeat(4, 1fr);
       gap: 40px; padding: 64px 24px 48px;
     }
-    .footer-brand .footer-logo-text {
-      font-family: 'Anton', sans-serif; font-size: 1.3rem;
-      color: var(--yellow); letter-spacing: .04em;
-      margin-bottom: 12px; display: block;
-    }
-    .footer-brand p { font-size: .85rem; color: var(--muted); line-height: 1.7; }
-    .footer-social { display: flex; gap: 12px; margin-top: 18px; }
+    .footer-logo-text { font-family: 'Anton', sans-serif; font-size: 1.2rem; color: var(--yellow); letter-spacing: .04em; margin-bottom: 14px; display: block; }
+    .footer-brand p { font-size: .85rem; color: var(--muted); line-height: 1.75; }
+    .footer-social { display: flex; gap: 10px; margin-top: 18px; }
     .footer-social a {
-      width: 36px; height: 36px; border-radius: 8px;
-      background: rgba(255,248,231,.07);
+      width: 36px; height: 36px; background: rgba(255,248,231,.06);
       border: 1px solid var(--border);
       display: flex; align-items: center; justify-content: center;
       color: var(--muted); transition: border-color .2s, color .2s;
     }
     .footer-social a:hover { border-color: var(--yellow); color: var(--yellow); }
-    .footer-col h4 {
-      font-family: 'Fredoka One', cursive;
-      font-size: .92rem; color: var(--text);
-      letter-spacing: .06em; margin-bottom: 16px;
-    }
+    .footer-col h4 { font-family: 'Anton', sans-serif; font-size: .88rem; color: var(--text); letter-spacing: .08em; margin-bottom: 16px; }
     .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
     .footer-col ul a { font-size: .85rem; color: var(--muted); transition: color .2s; }
     .footer-col ul a:hover { color: var(--yellow); }
     .footer-bottom {
       max-width: 1200px; margin: 0 auto;
-      border-top: 1px solid var(--border);
-      padding: 20px 24px;
-      display: flex; flex-wrap: wrap;
-      justify-content: space-between; align-items: center;
-      gap: 12px;
+      border-top: 1px solid var(--border); padding: 20px 24px;
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;
     }
     .footer-bottom p { font-size: .8rem; color: var(--muted); }
     .footer-legal { display: flex; gap: 20px; }
     .footer-legal a { font-size: .8rem; color: var(--muted); transition: color .2s; }
     .footer-legal a:hover { color: var(--yellow); }
 
-    /* ── SCROLL ANIMATIONS ── */
-    .scene-enter {
-      opacity: 0; transform: translateY(28px);
-      transition: opacity .55s ease, transform .55s ease;
-    }
-    .scene-enter.visible {
-      opacity: 1; transform: none;
-    }
+    /* ─── SCROLL ANIMS ─── */
+    .scene-enter { opacity: 0; transform: translateY(26px); transition: opacity .55s ease, transform .55s ease; }
+    .scene-enter.visible { opacity: 1; transform: none; }
 
-    /* ── RESPONSIVE ── */
+    /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       .nav-links, .nav-order { display: none; }
       .nav-hamburger { display: flex; }
       .story-layout { grid-template-columns: 1fr; }
-      .simg-accent { display: none; }
+      .simg-secondary { display: none; }
       .order-banner-inner { grid-template-columns: 1fr; }
       .order-banner-img { display: none; }
       .contact-layout { grid-template-columns: 1fr; }
-      .location-grid { grid-template-columns: 1fr; }
+      .country-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr 1fr; }
       .cform-row { grid-template-columns: 1fr; }
     }
@@ -661,21 +461,8 @@
       .hstat:last-child { border-bottom: none; }
       .footer-inner { grid-template-columns: 1fr; }
       .section-head-split { flex-direction: column; }
-    }
-
-    /* ── DESERT CRACK DIVIDER ── */
-    .crack-divider {
-      height: 6px;
-      background: repeating-linear-gradient(
-        90deg,
-        var(--yellow) 0px, var(--yellow) 40px,
-        transparent 40px, transparent 44px,
-        var(--yellow) 44px, var(--yellow) 80px,
-        transparent 80px, transparent 87px,
-        var(--yellow) 87px, var(--yellow) 120px,
-        transparent 120px, transparent 128px
-      );
-      opacity: .35;
+      .awards-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -685,11 +472,7 @@
 <nav id="navbar">
   <div class="nav-inner">
     <a href="#hero" class="nav-logo">
-      <span class="nav-logo-icon">🌮</span>
-      <span class="nav-logo-text">
-        <span class="nav-logo-main">STREET FOOD CHEF</span>
-        <span class="nav-logo-sub">Mexican Canteen · Sheffield</span>
-      </span>
+      <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/2439dab4-2429-4ac5-9888-ab2e18ae524b/SFC+Logo+for+yellow.png?format=1500w" alt="The Street Food Chef" class="nav-logo-img" />
     </a>
     <ul class="nav-links">
       <li><a href="#menu">The Menu</a></li>
@@ -707,7 +490,7 @@
 
 <!-- MOBILE MENU -->
 <div id="mob-menu">
-  <button id="mob-close" aria-label="Close menu">✕</button>
+  <button id="mob-close" aria-label="Close menu">&#x2715;</button>
   <ul>
     <li><a href="#menu">The Menu</a></li>
     <li><a href="#story">Our Story</a></li>
@@ -721,16 +504,16 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=1920&q=80" alt="Mexican street food" />
+    <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/8acc3a8c-d755-4e34-8324-be0f252df72b/Featured.png?format=2500w" alt="Street Food Chef Sheffield" />
     <div class="hero-overlay"></div>
   </div>
   <div class="hero-body">
-    <p class="hero-eyebrow">🌵 Sheffield's Mexican Canteen Since 2009</p>
+    <p class="hero-eyebrow">Sheffield&rsquo;s Mexican Canteen &mdash; Since 2009</p>
     <h1 class="hero-title">
       <span>FRESHLY MADE.</span>
       <span class="crack-line crack-text" id="crack-hero">BOLDLY REAL.</span>
     </h1>
-    <p class="hero-sub">Burritos, tacos &amp; quesadillas — built from scratch every day. Locally sourced. Ferociously seasoned. No shortcuts.</p>
+    <p class="hero-sub">Burritos, tacos and quesadillas built from scratch every single day. Locally sourced. Properly seasoned. No shortcuts, no compromises.</p>
     <div class="hero-btns">
       <a href="#menu" class="btn-red">See The Menu</a>
       <a href="#find-us" class="btn-ghost">Find Us in Sheffield</a>
@@ -740,7 +523,7 @@
     <div class="hero-stats-inner">
       <div class="hstat"><span class="hstat-n">15+</span><span class="hstat-l">Years in Sheffield</span></div>
       <div class="hstat"><span class="hstat-n">2</span><span class="hstat-l">Locations</span></div>
-      <div class="hstat"><span class="hstat-n">5×</span><span class="hstat-l">Eat Sheffield Award</span></div>
+      <div class="hstat"><span class="hstat-n">5&times;</span><span class="hstat-l">Eat Sheffield Award</span></div>
       <div class="hstat"><span class="hstat-n">100%</span><span class="hstat-l">Made Fresh Daily</span></div>
     </div>
   </div>
@@ -749,27 +532,26 @@
 <!-- TICKER -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-inner">
-    <span>Burritos</span><span class="dot">🌶</span>
-    <span>Tacos</span><span class="dot">🌵</span>
-    <span>Quesadillas</span><span class="dot">🌶</span>
-    <span>Margarita Slush</span><span class="dot">🌵</span>
-    <span>Fresh Salsas</span><span class="dot">🌶</span>
-    <span>Guacamole</span><span class="dot">🌵</span>
-    <span>Gluten Free Options</span><span class="dot">🌶</span>
-    <span>Yee Kwan Ice Cream</span><span class="dot">🌵</span>
-    <span>Moss Valley Meats</span><span class="dot">🌶</span>
-    <span>Our Cow Molly</span><span class="dot">🌵</span>
-    <!-- duplicate for seamless loop -->
-    <span>Burritos</span><span class="dot">🌶</span>
-    <span>Tacos</span><span class="dot">🌵</span>
-    <span>Quesadillas</span><span class="dot">🌶</span>
-    <span>Margarita Slush</span><span class="dot">🌵</span>
-    <span>Fresh Salsas</span><span class="dot">🌶</span>
-    <span>Guacamole</span><span class="dot">🌵</span>
-    <span>Gluten Free Options</span><span class="dot">🌶</span>
-    <span>Yee Kwan Ice Cream</span><span class="dot">🌵</span>
-    <span>Moss Valley Meats</span><span class="dot">🌶</span>
-    <span>Our Cow Molly</span><span class="dot">🌵</span>
+    <span>Burritos</span><span class="dot">&middot;</span>
+    <span>Tacos</span><span class="dot">&middot;</span>
+    <span>Quesadillas</span><span class="dot">&middot;</span>
+    <span>Fresh Salsas</span><span class="dot">&middot;</span>
+    <span>Margarita Slush</span><span class="dot">&middot;</span>
+    <span>Moss Valley Meats</span><span class="dot">&middot;</span>
+    <span>Gluten Free Options</span><span class="dot">&middot;</span>
+    <span>Yee Kwan Ice Cream</span><span class="dot">&middot;</span>
+    <span>Our Cow Molly</span><span class="dot">&middot;</span>
+    <span>Freshly Made Daily</span><span class="dot">&middot;</span>
+    <span>Burritos</span><span class="dot">&middot;</span>
+    <span>Tacos</span><span class="dot">&middot;</span>
+    <span>Quesadillas</span><span class="dot">&middot;</span>
+    <span>Fresh Salsas</span><span class="dot">&middot;</span>
+    <span>Margarita Slush</span><span class="dot">&middot;</span>
+    <span>Moss Valley Meats</span><span class="dot">&middot;</span>
+    <span>Gluten Free Options</span><span class="dot">&middot;</span>
+    <span>Yee Kwan Ice Cream</span><span class="dot">&middot;</span>
+    <span>Our Cow Molly</span><span class="dot">&middot;</span>
+    <span>Freshly Made Daily</span><span class="dot">&middot;</span>
   </div>
 </div>
 
@@ -780,26 +562,26 @@
       <div class="story-img-col">
         <div class="story-img-stack scene-enter">
           <img class="simg-main"
-            src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80"
-            alt="Street Food Chef kitchen" />
-          <img class="simg-accent"
-            src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=400&q=80"
-            alt="Freshly made tacos" />
+            src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1720683398743-85XKNNFYERTIOPR7PVAB/image-asset.jpeg?format=1500w"
+            alt="The Street Food Chef Sheffield" />
+          <img class="simg-secondary"
+            src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/d662e9d5-8a85-469e-87d3-8be45d5f8189/The+Street+Food+Chef%2C+Sheffield%2C+Classic+Silver+Bullet+Burrito?format=500w"
+            alt="Classic Silver Bullet Burrito" />
         </div>
       </div>
       <div class="story-text-col scene-enter">
         <span class="eyebrow-yellow">Our Story</span>
         <h2 class="crack-text" id="crack-story">BORN ON THE<br/>STREETS.</h2>
-        <p style="margin-top:18px">We started with a simple idea: Mexican street food made properly. Not chain-restaurant Mexican. Not tex-mex. Real, fresh, fiery food — the kind you'd find on a market stall in Oaxaca.</p>
-        <p>Over 15 years, Sheffield has made us their own. We've stayed family-run, stayed obsessed with sourcing, and stayed honest about what we put in your burrito. Everything is prepared fresh daily — salsas, guacamole, marinades. All of it.</p>
-        <p>We work with <strong style="color:var(--text)">Moss Valley Fine Meats</strong>, <strong style="color:var(--text)">Our Cow Molly</strong>, and <strong style="color:var(--text)">Yee Kwan</strong> — Sheffield producers we trust.</p>
+        <p style="margin-top:20px">We started with one idea: Mexican street food made properly. Not chain-restaurant Mexican. Not tex-mex. Real, fresh, fiery food &mdash; the kind you&rsquo;d find on a market stall in Oaxaca, built from scratch in Sheffield.</p>
+        <p>Over 15 years, Sheffield has made us their own. We&rsquo;ve stayed family-run, stayed obsessed with sourcing, and stayed honest about what goes in your burrito. Everything is prepared fresh every morning &mdash; salsas, guacamole, marinades, all of it.</p>
+        <p>We work with <strong style="color:var(--text)">Moss Valley Fine Meats</strong>, <strong style="color:var(--text)">Our Cow Molly</strong>, and <strong style="color:var(--text)">Yee Kwan</strong> &mdash; Sheffield producers we&rsquo;ve trusted for over a decade.</p>
         <div class="story-badges">
-          <div class="sbadge">🏆 5× Eat Sheffield Award</div>
-          <div class="sbadge">📰 Good Food Guide</div>
-          <div class="sbadge">🌿 Locally Sourced</div>
-          <div class="sbadge">🌶 Made Daily</div>
+          <div class="sbadge">5&times; Eat Sheffield Award</div>
+          <div class="sbadge">Good Food Guide</div>
+          <div class="sbadge">Locally Sourced</div>
+          <div class="sbadge">Made Fresh Daily</div>
         </div>
-        <p class="story-tagline">"A jalapeño a day keeps the doctor away."</p>
+        <p class="story-tagline">&ldquo;A jala&ntilde;o a day keeps the doctor away.&rdquo;</p>
       </div>
     </div>
   </div>
@@ -813,22 +595,22 @@
         <span class="eyebrow-yellow">The Menu</span>
         <h2>BUILD YOUR<br/>PERFECT PLATE.</h2>
       </div>
-      <p class="head-desc">Everything made to order. Pick your vessel, pick your protein, load it up. Gluten-free and vegan options throughout.</p>
+      <p class="head-desc">Everything made to order. Pick your vessel, your protein, your heat. Gluten-free and vegan options throughout the menu.</p>
     </div>
 
     <div class="tabs" id="menu-tabs">
-      <button class="tab active" data-cat="burritos">🌯 Burritos</button>
-      <button class="tab" data-cat="tacos">🌮 Tacos</button>
-      <button class="tab" data-cat="quesadillas">🧀 Quesadillas</button>
-      <button class="tab" data-cat="sides">🥑 Sides</button>
-      <button class="tab" data-cat="drinks">🍹 Drinks</button>
+      <button class="tab active" data-cat="burritos">Burritos</button>
+      <button class="tab" data-cat="tacos">Tacos</button>
+      <button class="tab" data-cat="quesadillas">Quesadillas</button>
+      <button class="tab" data-cat="sides">Sides</button>
+      <button class="tab" data-cat="drinks">Drinks</button>
     </div>
 
     <!-- BURRITOS -->
     <div class="food-grid active" id="cat-burritos">
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1584208632869-05fa2b2a5934?auto=format&fit=crop&w=500&q=80" alt="Chicken Burrito" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/d662e9d5-8a85-469e-87d3-8be45d5f8189/The+Street+Food+Chef%2C+Sheffield%2C+Classic+Silver+Bullet+Burrito?format=750w" alt="Classic Burrito" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>Classic Chicken Burrito</h3>
@@ -837,7 +619,7 @@
       </div>
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=500&q=80" alt="BBQ Beef Burrito" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1763994857166-XHJ3ZVE5LR4S4VV5SLC9/SFC%2BBurrito.jpg?format=750w" alt="BBQ Beef Burrito" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>BBQ Beef Burrito</h3>
@@ -847,17 +629,17 @@
       </div>
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=500&q=80" alt="Pulled Pork Burrito" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1764950446094-HFZIX3PE1FPOAD04FST6/IMG_5167.JPG?format=750w" alt="Pulled Pork Burrito" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>Pulled Pork Burrito</h3>
-          <p>Slow-cooked Moss Valley pork, roasted peppers, jalapeños, rice, salsa</p>
+          <p>Slow-cooked Moss Valley pork, roasted peppers, fresh jalape&ntilde;os, rice, salsa</p>
           <span class="tag tag-hot">Hot</span>
         </div>
       </div>
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1582234372722-50d7ccc30ebd?auto=format&fit=crop&w=500&q=80" alt="Veggie Burrito" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1762267707656-8CHWY76YXVLDYLBLC8C3/small%2Bplate.jpg?format=750w" alt="Veggie Burrito" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>Veggie Burrito</h3>
@@ -867,21 +649,21 @@
       </div>
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1640452277736-f5adabd92c55?auto=format&fit=crop&w=500&q=80" alt="Vegan Burrito" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/9ee2cbc1-49df-41a6-811c-c74893b68412/E4ACCEA3-526D-458D-8318-A162C6423BB8.jpg?format=750w" alt="Vegan Burrito" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>Vegan Burrito</h3>
-          <p>Black beans, roasted sweet potato, fresh salsa, pickled jalapeños — no compromises</p>
-          <span class="tag tag-veg">Vegan · GF Available</span>
+          <p>Black beans, roasted sweet potato, fresh salsa, pickled jalape&ntilde;os &mdash; no compromises</p>
+          <span class="tag tag-veg">Vegan &middot; GF Available</span>
         </div>
       </div>
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1676300184943-c8dba39b4aa9?auto=format&fit=crop&w=500&q=80" alt="Naked Bowl" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/e9c961f1-131e-4b7c-8daa-9f084904d1d2/Section+1.png?format=750w" alt="Naked Bowl" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>Naked Bowl</h3>
-          <p>All the flavour, no wrap — burrito fillings over rice or salad</p>
+          <p>All the flavour, no wrap &mdash; burrito fillings over rice or salad</p>
           <span class="tag tag-new">GF Friendly</span>
         </div>
       </div>
@@ -891,16 +673,16 @@
     <div class="food-grid" id="cat-tacos">
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=500&q=80" alt="Grilled Chicken Taco" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1676028837543-59YD4CETE2SRPQCJQB7N/The+Street+Food+Chef%2C+Sheffield%2C+Takeaway+Taco+Box?format=750w" alt="Chicken Taco" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>Grilled Chicken Taco</h3>
-          <p>Pickled slaw, jalapeño, fresh coriander, lime crema — two per portion</p>
+          <p>Pickled slaw, jalape&ntilde;o, fresh coriander, lime crema &mdash; two per portion</p>
         </div>
       </div>
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=500&q=80" alt="Beef Barbacoa Taco" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1676028147978-55RO6XW675SLR74433B9/The+Street+Food+Chef+chicken+tinga+plate?format=750w" alt="Beef Barbacoa Taco" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>Beef Barbacoa Taco</h3>
@@ -910,7 +692,7 @@
       </div>
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1624300629298-e9de39c13be5?auto=format&fit=crop&w=500&q=80" alt="Crispy Fish Taco" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/d3558a10-65f8-4952-af7b-630af498995c/Section+2.png?format=750w" alt="Fish Taco" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>Crispy Fish Taco</h3>
@@ -920,7 +702,7 @@
       </div>
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1515516969-d4008cc6241a?auto=format&fit=crop&w=500&q=80" alt="Veggie Taco" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/ba38b4df-5bd4-4c12-b69e-bfbf33bc5503/Section+3.png?format=750w" alt="Veggie Taco" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>Veggie Taco</h3>
@@ -934,7 +716,7 @@
     <div class="food-grid" id="cat-quesadillas">
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1618449840665-8f9ee90e8d04?auto=format&fit=crop&w=500&q=80" alt="Chicken Quesadilla" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1765209460444-Q55QGSQW3XZJ8HIKKBCA/Untitled-3.PNG?format=750w" alt="Chicken Quesadilla" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>Chicken &amp; Cheddar</h3>
@@ -944,17 +726,17 @@
       </div>
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1630400021958-0cfa7be2cd8d?auto=format&fit=crop&w=500&q=80" alt="Cheese Jalapeno Quesadilla" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1763994857166-XHJ3ZVE5LR4S4VV5SLC9/SFC%2BBurrito.jpg?format=750w" alt="Cheese Jalapeño Quesadilla" loading="lazy" />
         </div>
         <div class="food-info">
-          <h3>Cheese &amp; Jalapeño</h3>
-          <p>Three-cheese pull, fresh jalapeños, roasted garlic, crema</p>
+          <h3>Cheese &amp; Jalape&ntilde;o</h3>
+          <p>Three-cheese pull, fresh jalape&ntilde;os, roasted garlic, crema</p>
           <span class="tag tag-veg">Vegetarian</span>
         </div>
       </div>
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=500&q=80" alt="BBQ Beef Quesadilla" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/d662e9d5-8a85-469e-87d3-8be45d5f8189/The+Street+Food+Chef%2C+Sheffield%2C+Classic+Silver+Bullet+Burrito?format=750w" alt="BBQ Beef Quesadilla" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>BBQ Beef &amp; Cheese</h3>
@@ -968,41 +750,41 @@
     <div class="food-grid" id="cat-sides">
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?auto=format&fit=crop&w=500&q=80" alt="House Guacamole" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1762267707656-8CHWY76YXVLDYLBLC8C3/small%2Bplate.jpg?format=750w" alt="House Guacamole" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>House Guacamole</h3>
-          <p>Hand-mashed daily. Avocado, lime, coriander, a little heat</p>
-          <span class="tag tag-veg">Vegan · GF</span>
+          <p>Hand-mashed daily. Avocado, lime, coriander, a little heat.</p>
+          <span class="tag tag-veg">Vegan &middot; GF</span>
         </div>
       </div>
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1565895405138-6c3a1555da6a?auto=format&fit=crop&w=500&q=80" alt="Chunky Chips" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1676028147978-55RO6XW675SLR74433B9/The+Street+Food+Chef+chicken+tinga+plate?format=750w" alt="Chunky Chips" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>Chunky Chips</h3>
-          <p>Thick-cut, golden. Add salsa or sour cream</p>
+          <p>Thick-cut and golden. Add salsa or sour cream on the side.</p>
           <span class="tag tag-veg">Vegan</span>
         </div>
       </div>
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&w=500&q=80" alt="Pico de Gallo" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/e9c961f1-131e-4b7c-8daa-9f084904d1d2/Section+1.png?format=750w" alt="Pico de Gallo" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>Pico de Gallo</h3>
-          <p>Sheffield's freshest tomato salsa. Made every morning.</p>
-          <span class="tag tag-veg">Vegan · GF</span>
+          <p>Sheffield&rsquo;s freshest tomato salsa. Made every morning.</p>
+          <span class="tag tag-veg">Vegan &middot; GF</span>
         </div>
       </div>
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=500&q=80" alt="Yee Kwan Ice Cream" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/9ee2cbc1-49df-41a6-811c-c74893b68412/E4ACCEA3-526D-458D-8318-A162C6423BB8.jpg?format=750w" alt="Yee Kwan Ice Cream" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>Yee Kwan Ice Cream</h3>
-          <p>Yorkshire-made. Salted caramel or dark chocolate</p>
+          <p>Yorkshire-made. Salted caramel or dark chocolate.</p>
           <span class="tag tag-new">Local Collab</span>
         </div>
       </div>
@@ -1012,17 +794,17 @@
     <div class="food-grid" id="cat-drinks">
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1581621661576-40f7d14e2c7a?auto=format&fit=crop&w=500&q=80" alt="Margarita Slush" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/d3558a10-65f8-4952-af7b-630af498995c/Section+2.png?format=750w" alt="Margarita Slush" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>Margarita Slush</h3>
-          <p>Classic lime or strawberry. The only way to wash down a burrito.</p>
+          <p>Classic lime or strawberry. The only way to end a burrito.</p>
           <span class="tag tag-sig">House Special</span>
         </div>
       </div>
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1518176258769-f227c798150e?auto=format&fit=crop&w=500&q=80" alt="Mexican Lager" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/ba38b4df-5bd4-4c12-b69e-bfbf33bc5503/Section+3.png?format=750w" alt="Mexican Lager" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>Mexican Lager</h3>
@@ -1031,27 +813,26 @@
       </div>
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?auto=format&fit=crop&w=500&q=80" alt="House Wine" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1764950446094-HFZIX3PE1FPOAD04FST6/IMG_5167.JPG?format=750w" alt="House Wine" loading="lazy" />
         </div>
         <div class="food-info">
           <h3>House Wine</h3>
-          <p>Red, white, or rosé. Bottled for the table.</p>
+          <p>Red, white or ros&eacute;. Bottled for the table.</p>
         </div>
       </div>
       <div class="food-card scene-enter">
         <div class="food-img">
-          <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=500&q=80" alt="Fresh Lemonade" loading="lazy" />
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1763994857166-XHJ3ZVE5LR4S4VV5SLC9/SFC%2BBurrito.jpg?format=750w" alt="Tequila and Soft Drinks" loading="lazy" />
         </div>
         <div class="food-info">
-          <h3>Fresh Lemonade</h3>
-          <p>House-squeezed, chilli-spiked optional. Genuinely refreshing.</p>
-          <span class="tag tag-veg">Vegan</span>
+          <h3>Tequila &amp; Soft Drinks</h3>
+          <p>Full selection of soft drinks, juices, and tequila at the bar.</p>
         </div>
       </div>
     </div>
 
     <div class="menu-note">
-      <p>Full allergen and calorie information available in-store and on our website. Gluten-free wraps and dairy-free options available across the menu — just ask.</p>
+      <p>Full allergen and calorie information available in-store and online. Gluten-free wraps and dairy-free options available &mdash; just ask.</p>
       <a href="https://streetfoodchef.co.uk/menu" target="_blank" class="btn-yellow-sm">Download Full Menu</a>
       <a href="https://streetfoodchef.co.uk" target="_blank" class="btn-red-sm">Order for Collection</a>
     </div>
@@ -1066,140 +847,136 @@
         <span class="eyebrow-white">Recognition</span>
         <h2 style="color:#fff">SHEFFIELD<br/>KEEPS CHOOSING US.</h2>
       </div>
-      <p class="head-desc" style="color:rgba(255,255,255,.75)">Fifteen years of awards, recommendations, and packed-out lunchtime queues. We're not the biggest — just the one people come back to.</p>
+      <p class="head-desc" style="color:rgba(255,255,255,.72)">Fifteen years of awards, recommendations, and packed lunchtime queues. We&rsquo;re not the biggest &mdash; just the one people come back to.</p>
     </div>
     <div class="awards-grid">
       <div class="award-card scene-enter">
-        <div class="award-icon">🏆</div>
-        <h4>Eat Sheffield — 5× Winner</h4>
-        <p>Sheffield's most trusted food awards, voted by the public</p>
+        <div class="award-icon">&#127942;</div>
+        <h4>Eat Sheffield &mdash; 5&times; Winner</h4>
+        <p>Sheffield&rsquo;s most trusted food awards, voted by the public every year</p>
       </div>
       <div class="award-card scene-enter">
-        <div class="award-icon">📖</div>
+        <div class="award-icon">&#128214;</div>
         <h4>Good Food Guide</h4>
-        <p>Reader recommendation — independent recognition that means something</p>
+        <p>Reader recommendation &mdash; independent recognition that actually means something</p>
       </div>
       <div class="award-card scene-enter">
-        <div class="award-icon">🗞️</div>
+        <div class="award-icon">&#128240;</div>
         <h4>Observer Food Awards</h4>
-        <p>Runner-up in one of the UK's most respected food competitions</p>
+        <p>Runner-up in one of the UK&rsquo;s most respected food competitions</p>
       </div>
       <div class="award-card scene-enter">
-        <div class="award-icon">♻️</div>
+        <div class="award-icon">&#9851;</div>
         <h4>Uber Eats Sustainability</h4>
-        <p>Runner-up for sustainable packaging — we take this seriously</p>
+        <p>Runner-up for sustainable packaging &mdash; we take this seriously</p>
       </div>
       <div class="award-card scene-enter">
-        <div class="award-icon">🌿</div>
+        <div class="award-icon">&#127807;</div>
         <h4>Local Sourcing</h4>
-        <p>Partnered with Moss Valley, Our Cow Molly &amp; Yee Kwan for over a decade</p>
+        <p>Partnered with Moss Valley, Our Cow Molly and Yee Kwan for over a decade</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DELIVERY -->
-<section class="section-sand" style="background:#1E0B01; padding:64px 0;">
+<!-- DELIVERY PARTNERS -->
+<section class="section-dark" style="padding:64px 0;">
   <div class="wrap">
     <span class="eyebrow-yellow" style="text-align:center;display:block">Order &amp; Delivery</span>
-    <h3 style="text-align:center;font-family:'Anton',sans-serif;font-size:1.8rem;margin-bottom:8px">Find Us On</h3>
-    <div class="delivery-logos">
-      <a href="https://www.ubereats.com/gb/store/the-street-food-chef-the-canteen/QsFFz9TDXgKhy5s2dddN9A" target="_blank" class="delivery-logo">Uber Eats</a>
-      <a href="https://streetfoodchef.co.uk" target="_blank" class="delivery-logo">Click &amp; Collect</a>
-      <a href="https://streetfoodchef.co.uk/catering" target="_blank" class="delivery-logo">Catering</a>
+    <h3 class="partner-heading">Find Us On</h3>
+    <div class="partner-logos">
+      <a href="https://www.ubereats.com/gb/store/the-street-food-chef-the-canteen/QsFFz9TDXgKhy5s2dddN9A" target="_blank" class="partner-logo">Uber Eats</a>
+      <a href="https://streetfoodchef.co.uk" target="_blank" class="partner-logo">Click &amp; Collect</a>
+      <a href="https://streetfoodchef.co.uk/catering" target="_blank" class="partner-logo">Catering</a>
     </div>
   </div>
 </section>
 
-<!-- ORDER BANNER -->
-<section class="section-dark" style="padding:96px 0;">
+<!-- CATERING BANNER -->
+<section class="section-off" style="padding:96px 0;">
   <div class="wrap">
     <div class="order-banner-inner">
       <div class="order-banner-text">
         <span class="eyebrow-yellow">Catering &amp; Events</span>
         <h2>FEED THE<br/>WHOLE CROWD.</h2>
-        <p>We cater for everything from office lunches to weddings. Fresh, setup at your venue, portions for 10 to 500. Sheffield's most-booked Mexican catering team.</p>
+        <p>We cater for everything from office lunches to weddings. Fresh, set up at your venue, portions for 10 to 500. Sheffield&rsquo;s most-booked Mexican catering team.</p>
         <div class="order-btns">
           <a href="https://streetfoodchef.co.uk/catering" target="_blank" class="btn-red">Enquire About Catering</a>
           <a href="#contact" class="btn-ghost">Get In Touch</a>
         </div>
       </div>
       <div class="order-banner-img scene-enter">
-        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Street Food Chef catering" loading="lazy" />
+        <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1720683398743-85XKNNFYERTIOPR7PVAB/image-asset.jpeg?format=1500w" alt="Street Food Chef Catering" loading="lazy" />
       </div>
     </div>
   </div>
 </section>
 
 <!-- REVIEWS -->
-<section class="section-off" style="padding:96px 0;">
+<section class="section-dark" style="padding:96px 0;">
   <div class="wrap">
     <span class="eyebrow-yellow" style="text-align:center;display:block">What Sheffield Says</span>
-    <h2 style="text-align:center;margin-bottom:0">THE CITY'S<br/><span class="crack-text" id="crack-reviews">VERDICT.</span></h2>
+    <h2 style="text-align:center">THE CITY&rsquo;S <span class="crack-text" id="crack-reviews">VERDICT.</span></h2>
     <div class="reviews-grid">
       <div class="review-card scene-enter">
-        <div class="review-stars">★★★★★</div>
-        <p>"Best burrito in Sheffield, no competition. Been coming here since they opened and it hasn't dropped a single time. The chipotle beef one is something else."</p>
-        <span class="review-name">— Eat Sheffield</span>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;Best burrito in Sheffield, no competition. Been coming here since they opened and it hasn&rsquo;t dropped once. The chipotle beef is something else.&rdquo;</p>
+        <span class="review-name">&mdash; Eat Sheffield</span>
       </div>
       <div class="review-card scene-enter">
-        <div class="review-stars">★★★★★</div>
-        <p>"The fish taco alone is worth the trip. Fresh, light, properly spiced. Feels like actual street food — not the sanitised version you get everywhere else."</p>
-        <span class="review-name">— Google Review</span>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;The fish taco alone is worth the trip. Fresh, light, properly spiced. Feels like actual street food &mdash; not the sanitised version you get everywhere else.&rdquo;</p>
+        <span class="review-name">&mdash; Google Review</span>
       </div>
       <div class="review-card scene-enter">
-        <div class="review-stars">★★★★★</div>
-        <p>"As a vegan I usually feel like an afterthought. Not here. The vegan burrito is genuinely the thing I look forward to most on a Friday."</p>
-        <span class="review-name">— TripAdvisor</span>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;As a vegan I usually feel like an afterthought. Not here. The vegan burrito is genuinely the thing I look forward to most on a Friday.&rdquo;</p>
+        <span class="review-name">&mdash; TripAdvisor</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FIND US -->
-<section id="find-us" class="section-dark">
+<section id="find-us" class="section-off">
   <div class="wrap">
     <span class="eyebrow-yellow">Sheffield Locations</span>
     <h2 style="margin-bottom:48px">FIND YOUR<br/>NEAREST CANTEEN.</h2>
-    <div class="location-grid">
+    <div class="country-grid">
 
-      <!-- The Canteen -->
-      <div class="loc-card scene-enter">
-        <div class="loc-card-img">
-          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="The Canteen Sheffield" loading="lazy" />
+      <div class="loc-tile scene-enter">
+        <div class="loc-tile-img">
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/359b2c1e-647a-4217-9218-cd8ffe446f09/the+hatch.jpg?format=1500w" alt="The Canteen Sheffield" loading="lazy" />
         </div>
-        <div class="loc-card-body">
+        <div class="loc-tile-body">
           <span class="loc-tag">City Centre</span>
           <h3>The Canteen</h3>
           <p>90 Arundel Street, Sheffield S1 4RE</p>
-          <p style="margin-top:4px">📞 0114 275 2390</p>
-          <p>✉ arundel@streetfoodchef.co.uk</p>
+          <p>0114 275 2390 &nbsp;&middot;&nbsp; arundel@streetfoodchef.co.uk</p>
           <div class="loc-hours">
-            <div class="hours-row"><span>Mon – Fri</span><span>11:00 – 22:00</span></div>
-            <div class="hours-row"><span>Saturday</span><span>10:00 – 22:00</span></div>
-            <div class="hours-row"><span>Sunday</span><span>10:00 – 21:00</span></div>
+            <div class="hours-row"><span>Mon &ndash; Fri</span><span>11:00 &ndash; 22:00</span></div>
+            <div class="hours-row"><span>Saturday</span><span>10:00 &ndash; 22:00</span></div>
+            <div class="hours-row"><span>Sunday</span><span>10:00 &ndash; 21:00</span></div>
           </div>
-          <a href="https://maps.google.com/?q=90+Arundel+Street+Sheffield" target="_blank" class="btn-red-sm" style="margin-top:20px;display:inline-block">Get Directions</a>
+          <a href="https://maps.google.com/?q=90+Arundel+Street+Sheffield" target="_blank" class="btn-loc">Get Directions</a>
         </div>
       </div>
 
-      <!-- The Escotilla -->
-      <div class="loc-card scene-enter">
-        <div class="loc-card-img">
-          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="The Escotilla Sheffield" loading="lazy" />
+      <div class="loc-tile scene-enter">
+        <div class="loc-tile-img">
+          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/9e4efda9-d402-4e75-9844-b723c5eaeed9/IMG_2707.jpg?format=1500w" alt="The Escotilla Sheffield" loading="lazy" />
         </div>
-        <div class="loc-card-body">
+        <div class="loc-tile-body">
           <span class="loc-tag">Sharrow Vale</span>
           <h3>The Escotilla</h3>
           <p>376 Sharrow Vale Road, Sheffield S11 8ZP</p>
-          <p style="margin-top:4px">📞 0114 327 4778</p>
-          <p>✉ sharrow@streetfoodchef.co.uk</p>
+          <p>0114 327 4778 &nbsp;&middot;&nbsp; sharrow@streetfoodchef.co.uk</p>
           <div class="loc-hours">
-            <div class="hours-row"><span>Mon – Fri</span><span>11:00 – 22:00</span></div>
-            <div class="hours-row"><span>Saturday</span><span>10:00 – 22:00</span></div>
-            <div class="hours-row"><span>Sunday</span><span>10:00 – 21:00</span></div>
+            <div class="hours-row"><span>Mon &ndash; Fri</span><span>11:00 &ndash; 22:00</span></div>
+            <div class="hours-row"><span>Saturday</span><span>10:00 &ndash; 22:00</span></div>
+            <div class="hours-row"><span>Sunday</span><span>10:00 &ndash; 21:00</span></div>
           </div>
-          <a href="https://maps.google.com/?q=376+Sharrow+Vale+Road+Sheffield" target="_blank" class="btn-red-sm" style="margin-top:20px;display:inline-block">Get Directions</a>
+          <a href="https://maps.google.com/?q=376+Sharrow+Vale+Road+Sheffield" target="_blank" class="btn-loc">Get Directions</a>
         </div>
       </div>
 
@@ -1208,36 +985,32 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section-off">
+<section id="contact" class="section-dark">
   <div class="wrap">
     <div class="contact-layout">
       <div class="contact-left">
         <span class="eyebrow-yellow">Contact</span>
         <h2>GET IN<br/>TOUCH.</h2>
-        <p>Feedback, catering enquiries, group bookings, or just to tell us how your burrito was — we read everything.</p>
+        <p>Feedback, catering enquiries, group bookings, press &mdash; or just to tell us how your burrito was. We read everything.</p>
         <div class="clinks">
           <a href="tel:01142752390" class="clink scene-enter">
-            <span class="clink-icon">📞</span>
+            <span class="clink-icon">&#128222;</span>
             <div><strong>The Canteen</strong><span>0114 275 2390</span></div>
           </a>
           <a href="tel:01143274778" class="clink scene-enter">
-            <span class="clink-icon">📞</span>
+            <span class="clink-icon">&#128222;</span>
             <div><strong>The Escotilla</strong><span>0114 327 4778</span></div>
           </a>
           <a href="https://www.instagram.com/streetfoodchef/" target="_blank" class="clink scene-enter">
-            <span class="clink-icon">📸</span>
+            <span class="clink-icon">&#128247;</span>
             <div><strong>Instagram</strong><span>@streetfoodchef</span></div>
           </a>
           <a href="https://twitter.com/streetfoodchef" target="_blank" class="clink scene-enter">
-            <span class="clink-icon">🐦</span>
+            <span class="clink-icon">&#128038;</span>
             <div><strong>Twitter / X</strong><span>@streetfoodchef</span></div>
           </a>
-          <a href="https://www.tiktok.com/@streetfoodchef" target="_blank" class="clink scene-enter">
-            <span class="clink-icon">🎵</span>
-            <div><strong>TikTok</strong><span>@streetfoodchef</span></div>
-          </a>
           <a href="https://streetfoodchef.co.uk/catering" target="_blank" class="clink scene-enter">
-            <span class="clink-icon">🎉</span>
+            <span class="clink-icon">&#127881;</span>
             <div><strong>Catering &amp; Events</strong><span>streetfoodchef.co.uk/catering</span></div>
           </a>
         </div>
@@ -1273,9 +1046,9 @@
           </div>
           <div class="cform-group">
             <label>Message</label>
-            <textarea rows="5" placeholder="Tell us what's on your mind..." required></textarea>
+            <textarea rows="5" placeholder="Your message..." required></textarea>
           </div>
-          <button type="submit" class="btn-red" style="width:100%;font-size:1rem;padding:16px">Send Message</button>
+          <button type="submit" class="btn-red" style="width:100%;font-size:1rem;padding:16px;letter-spacing:.06em;text-transform:uppercase">Send Message</button>
         </form>
       </div>
     </div>
@@ -1287,8 +1060,8 @@
   <div class="wrap">
     <div class="nl-inner">
       <div>
-        <h3>Stay in the Loop. 🌮</h3>
-        <p>New menu items, seasonal specials, and the odd Monday motivation to eat well.</p>
+        <h3>Stay in the Loop.</h3>
+        <p>New menu items, seasonal specials, and the occasional reminder that your hair needs a burrito.</p>
       </div>
       <form class="nl-form" onsubmit="handleNewsletter(event)">
         <input type="email" placeholder="Your email address..." required />
@@ -1302,8 +1075,8 @@
 <footer id="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <span class="footer-logo-text">🌮 STREET FOOD CHEF</span>
-      <p>Sheffield's Mexican Canteen.<br/>Family-run since 2009.<br/>Fresh. Bold. Unapologetic.</p>
+      <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/82582cf9-3d78-4adf-9cb7-f943332ebbb1/The+Street+Food+Chef+stacked+logo?format=300w" alt="The Street Food Chef" style="height:52px;width:auto;margin-bottom:14px;filter:brightness(0) invert(1);" />
+      <p>Sheffield&rsquo;s Mexican Canteen.<br/>Family-run since 2009.<br/>Fresh. Bold. Unapologetic.</p>
       <div class="footer-social">
         <a href="https://www.instagram.com/streetfoodchef/" target="_blank" aria-label="Instagram">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -1322,8 +1095,7 @@
         <li><a href="#menu">Burritos</a></li>
         <li><a href="#menu">Tacos</a></li>
         <li><a href="#menu">Quesadillas</a></li>
-        <li><a href="#menu">Sides</a></li>
-        <li><a href="#menu">Drinks</a></li>
+        <li><a href="#menu">Sides &amp; Drinks</a></li>
         <li><a href="https://streetfoodchef.co.uk/menu" target="_blank">Full PDF Menu</a></li>
       </ul>
     </div>
@@ -1348,6 +1120,7 @@
       <h4>More</h4>
       <ul>
         <li><a href="#story">Our Story</a></li>
+        <li><a href="#awards">Awards</a></li>
         <li><a href="https://streetfoodchef.co.uk/catering" target="_blank">Catering</a></li>
         <li><a href="https://streetfoodchef.co.uk/blog" target="_blank">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -1355,7 +1128,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 The Street Food Chef. Family-run since 2009. Sheffield's Mexican Canteen.</p>
+    <p>&copy; 2026 The Street Food Chef. Family-run since 2009. Sheffield&rsquo;s Mexican Canteen.</p>
     <div class="footer-legal">
       <a href="https://streetfoodchef.co.uk/privacy" target="_blank">Privacy Policy</a>
       <a href="https://streetfoodchef.co.uk/terms" target="_blank">Terms</a>
@@ -1364,104 +1137,122 @@
 </footer>
 
 <script>
-  /* ── CRACKED YELLOW TEXT ── */
-  (function() {
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400">
-      <rect width="800" height="400" fill="#FFD700"/>
-      <path d="M95,0 Q88,28 100,55 Q84,88 97,122 Q82,158 95,192 Q80,228 92,265 Q78,302 90,340 Q82,370 88,400" stroke="#2A0800" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.72"/>
-      <path d="M100,55 Q118,62 136,56 Q150,60 163,54" stroke="#2A0800" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.58"/>
-      <path d="M97,122 Q80,127 66,122 Q53,126 42,120" stroke="#2A0800" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0.52"/>
-      <path d="M92,265 Q108,270 122,265 Q135,269 147,263" stroke="#2A0800" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.48"/>
-      <path d="M285,0 Q293,30 278,60 Q290,95 276,132 Q289,168 275,205 Q288,242 274,280 Q286,318 274,360 Q280,382 277,400" stroke="#2A0800" stroke-width="2.6" fill="none" stroke-linecap="round" opacity="0.72"/>
-      <path d="M276,132 Q294,139 310,133 Q325,137 339,131" stroke="#2A0800" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.58"/>
-      <path d="M274,280 Q258,285 244,279 Q230,283 218,277" stroke="#2A0800" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.5"/>
-      <path d="M478,0 Q470,34 483,68 Q468,102 481,138 Q466,175 479,212 Q464,250 477,288 Q462,325 474,362 Q467,383 472,400" stroke="#2A0800" stroke-width="2.6" fill="none" stroke-linecap="round" opacity="0.68"/>
-      <path d="M481,138 Q498,145 514,139 Q528,143 541,137" stroke="#2A0800" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.55"/>
-      <path d="M479,212 Q462,217 448,211 Q435,215 423,209" stroke="#2A0800" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.48"/>
-      <path d="M674,0 Q682,36 668,72 Q680,110 667,148 Q679,186 666,224 Q678,262 665,300 Q676,338 664,376 Q670,390 667,400" stroke="#2A0800" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.65"/>
-      <path d="M668,72 Q684,79 699,73 Q712,77 724,71" stroke="#2A0800" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0.55"/>
-      <path d="M666,224 Q681,229 695,223 Q708,227 720,221" stroke="#2A0800" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.48"/>
-    </svg>`;
+/* ── CRACKED YELLOW TEXT — denser desert floor fissures ── */
+(function() {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="400">
+    <rect width="1000" height="400" fill="#FFD700"/>
+    <path d="M60,0 Q52,22 64,48 Q50,78 62,108 Q48,140 60,172 Q46,205 58,238 Q44,272 56,308 Q42,345 52,400" stroke="#2A0800" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.82"/>
+    <path d="M64,48 Q82,55 98,50 Q112,54 126,48" stroke="#2A0800" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.65"/>
+    <path d="M62,108 Q45,113 31,108 Q18,112 7,107" stroke="#2A0800" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.58"/>
+    <path d="M60,172 Q76,178 90,173 Q102,177 114,171" stroke="#2A0800" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.55"/>
+    <path d="M58,238 Q42,243 28,238 Q15,242 3,236" stroke="#2A0800" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <path d="M56,308 Q72,313 86,308 Q98,312 110,306" stroke="#2A0800" stroke-width="1.0" fill="none" stroke-linecap="round" opacity="0.45"/>
+    <path d="M195,0 Q202,24 189,52 Q200,85 187,118 Q198,154 185,190 Q196,228 183,265 Q194,303 182,342 Q190,372 185,400" stroke="#2A0800" stroke-width="2.8" fill="none" stroke-linecap="round" opacity="0.78"/>
+    <path d="M189,52 Q206,59 222,53 Q236,57 250,51" stroke="#2A0800" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.62"/>
+    <path d="M187,118 Q170,124 156,118 Q143,122 131,117" stroke="#2A0800" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0.56"/>
+    <path d="M185,190 Q201,196 215,190 Q227,194 240,188" stroke="#2A0800" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.52"/>
+    <path d="M183,265 Q166,270 152,264 Q139,268 127,263" stroke="#2A0800" stroke-width="1.0" fill="none" stroke-linecap="round" opacity="0.48"/>
+    <path d="M182,342 Q198,347 212,342 Q224,346 236,340" stroke="#2A0800" stroke-width="0.9" fill="none" stroke-linecap="round" opacity="0.42"/>
+    <path d="M340,0 Q333,28 346,58 Q332,92 344,128 Q330,165 342,202 Q328,240 340,278 Q326,316 338,358 Q330,382 335,400" stroke="#2A0800" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.75"/>
+    <path d="M346,58 Q364,65 380,59 Q394,63 408,57" stroke="#2A0800" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.62"/>
+    <path d="M344,128 Q326,134 312,128 Q299,132 287,127" stroke="#2A0800" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.55"/>
+    <path d="M342,202 Q358,208 372,202 Q384,206 396,200" stroke="#2A0800" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <path d="M340,278 Q322,283 308,277 Q295,281 283,276" stroke="#2A0800" stroke-width="1.0" fill="none" stroke-linecap="round" opacity="0.46"/>
+    <path d="M490,0 Q498,25 484,55 Q496,90 482,126 Q494,163 480,200 Q492,238 478,276 Q490,315 476,355 Q484,378 480,400" stroke="#2A0800" stroke-width="2.8" fill="none" stroke-linecap="round" opacity="0.78"/>
+    <path d="M484,55 Q466,62 452,56 Q439,60 427,54" stroke="#2A0800" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M482,126 Q500,132 516,126 Q530,130 544,125" stroke="#2A0800" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.58"/>
+    <path d="M480,200 Q462,206 448,200 Q435,204 423,199" stroke="#2A0800" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.52"/>
+    <path d="M478,276 Q494,281 508,275 Q520,279 532,273" stroke="#2A0800" stroke-width="1.0" fill="none" stroke-linecap="round" opacity="0.48"/>
+    <path d="M476,355 Q458,360 444,354 Q431,358 419,353" stroke="#2A0800" stroke-width="0.9" fill="none" stroke-linecap="round" opacity="0.42"/>
+    <path d="M638,0 Q630,30 644,62 Q630,96 644,132 Q630,170 643,208 Q629,246 642,285 Q628,325 640,368 Q632,388 637,400" stroke="#2A0800" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.75"/>
+    <path d="M644,62 Q662,68 678,62 Q692,66 706,60" stroke="#2A0800" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M644,132 Q626,138 612,132 Q599,136 587,130" stroke="#2A0800" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.54"/>
+    <path d="M643,208 Q660,214 675,208 Q688,212 700,206" stroke="#2A0800" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <path d="M642,285 Q624,290 610,284 Q597,288 585,283" stroke="#2A0800" stroke-width="1.0" fill="none" stroke-linecap="round" opacity="0.46"/>
+    <path d="M640,368 Q656,373 670,368 Q682,372 694,366" stroke="#2A0800" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.4"/>
+    <path d="M800,0 Q808,28 794,60 Q807,96 793,133 Q806,171 793,210 Q805,250 792,290 Q804,330 792,372 Q798,390 795,400" stroke="#2A0800" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.72"/>
+    <path d="M794,60 Q778,66 763,60 Q750,64 738,58" stroke="#2A0800" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0.58"/>
+    <path d="M793,133 Q810,139 826,133 Q840,137 854,131" stroke="#2A0800" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.54"/>
+    <path d="M793,210 Q775,216 761,210 Q748,214 736,208" stroke="#2A0800" stroke-width="1.0" fill="none" stroke-linecap="round" opacity="0.48"/>
+    <path d="M792,290 Q808,295 822,290 Q835,294 848,288" stroke="#2A0800" stroke-width="0.9" fill="none" stroke-linecap="round" opacity="0.44"/>
+    <path d="M950,0 Q943,26 956,55 Q942,88 954,124 Q940,162 952,200 Q938,240 950,282 Q936,322 948,365 Q940,386 946,400" stroke="#2A0800" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.68"/>
+    <path d="M956,55 Q972,62 987,56 Q999,60 1000,56" stroke="#2A0800" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.55"/>
+    <path d="M954,124 Q938,130 923,124 Q910,128 898,122" stroke="#2A0800" stroke-width="1.0" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <path d="M952,200 Q968,206 982,200 Q994,204 1000,200" stroke="#2A0800" stroke-width="0.9" fill="none" stroke-linecap="round" opacity="0.45"/>
+    <path d="M126,48 Q160,52 189,52" stroke="#2A0800" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.36"/>
+    <path d="M250,51 Q294,54 340,58" stroke="#2A0800" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.33"/>
+    <path d="M408,57 Q446,60 484,55" stroke="#2A0800" stroke-width="0.7" fill="none" stroke-linecap="round" opacity="0.3"/>
+    <path d="M131,117 Q158,120 187,118" stroke="#2A0800" stroke-width="0.7" fill="none" stroke-linecap="round" opacity="0.3"/>
+    <path d="M544,125 Q566,128 587,130" stroke="#2A0800" stroke-width="0.7" fill="none" stroke-linecap="round" opacity="0.28"/>
+    <path d="M706,60 Q722,63 738,58" stroke="#2A0800" stroke-width="0.7" fill="none" stroke-linecap="round" opacity="0.28"/>
+    <path d="M240,188 Q284,194 328,202" stroke="#2A0800" stroke-width="0.7" fill="none" stroke-linecap="round" opacity="0.26"/>
+    <path d="M854,131 Q876,134 898,132" stroke="#2A0800" stroke-width="0.7" fill="none" stroke-linecap="round" opacity="0.28"/>
+    <path d="M700,206 Q718,210 736,208" stroke="#2A0800" stroke-width="0.6" fill="none" stroke-linecap="round" opacity="0.26"/>
+    <path d="M283,276 Q312,280 340,278" stroke="#2A0800" stroke-width="0.6" fill="none" stroke-linecap="round" opacity="0.25"/>
+  </svg>`;
 
-    const encoded = 'data:image/svg+xml;base64,' + btoa(svg);
-    const url = `url("${encoded}")`;
-
-    ['crack-hero', 'crack-story', 'crack-reviews'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.style.backgroundImage = url;
-        el.style.backgroundSize = '800px 400px';
-        el.style.backgroundRepeat = 'repeat';
-      }
-    });
-  })();
-
-  /* ── NAV SCROLL ── */
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.style.background = window.scrollY > 40
-      ? 'rgba(22,8,0,.97)'
-      : 'rgba(22,8,0,.92)';
-  }, { passive: true });
-
-  /* ── MOBILE MENU ── */
-  const hamburger = document.getElementById('hamburger');
-  const mobMenu   = document.getElementById('mob-menu');
-  const mobClose  = document.getElementById('mob-close');
-
-  hamburger.addEventListener('click', () => mobMenu.classList.add('open'));
-  mobClose.addEventListener('click',  () => mobMenu.classList.remove('open'));
-  mobMenu.querySelectorAll('a').forEach(a =>
-    a.addEventListener('click', () => mobMenu.classList.remove('open'))
-  );
-
-  /* ── MENU TABS ── */
-  document.getElementById('menu-tabs').addEventListener('click', e => {
-    const btn = e.target.closest('.tab');
-    if (!btn) return;
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.food-grid').forEach(g => g.classList.remove('active'));
-    btn.classList.add('active');
-    const grid = document.getElementById('cat-' + btn.dataset.cat);
-    if (grid) {
-      grid.classList.add('active');
-      grid.querySelectorAll('.scene-enter').forEach((el, i) => {
-        setTimeout(() => el.classList.add('visible'), i * 60);
-      });
+  const encoded = 'data:image/svg+xml;base64,' + btoa(svg);
+  const url = `url("${encoded}")`;
+  ['crack-hero','crack-story','crack-reviews'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.style.backgroundImage = url;
+      el.style.backgroundSize  = '1000px 400px';
+      el.style.backgroundRepeat = 'repeat';
     }
   });
+})();
 
-  /* ── SCROLL ANIMATIONS ── */
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+/* ── NAV SCROLL ── */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.style.background = window.scrollY > 40 ? 'rgba(24,9,0,.98)' : 'rgba(24,9,0,.93)';
+}, { passive: true });
+
+/* ── MOBILE MENU ── */
+const hamburger = document.getElementById('hamburger');
+const mobMenu   = document.getElementById('mob-menu');
+const mobClose  = document.getElementById('mob-close');
+hamburger.addEventListener('click', () => mobMenu.classList.add('open'));
+mobClose.addEventListener('click',  () => mobMenu.classList.remove('open'));
+mobMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobMenu.classList.remove('open')));
+
+/* ── MENU TABS ── */
+document.getElementById('menu-tabs').addEventListener('click', e => {
+  const btn = e.target.closest('.tab');
+  if (!btn) return;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.food-grid').forEach(g => g.classList.remove('active'));
+  btn.classList.add('active');
+  const grid = document.getElementById('cat-' + btn.dataset.cat);
+  if (grid) {
+    grid.classList.add('active');
+    grid.querySelectorAll('.scene-enter').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), i * 60);
     });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.scene-enter').forEach(el => observer.observe(el));
-
-  /* ── FORM HANDLERS ── */
-  function handleForm(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('button[type="submit"]');
-    btn.textContent = 'Message Sent ✓';
-    btn.style.background = '#27a85a';
-    setTimeout(() => {
-      btn.textContent = 'Send Message';
-      btn.style.background = '';
-      e.target.reset();
-    }, 3200);
   }
+});
 
-  function handleNewsletter(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('button');
-    btn.textContent = 'Subscribed ✓';
-    setTimeout(() => { btn.textContent = 'Subscribe'; e.target.reset(); }, 3000);
-  }
+/* ── SCROLL ANIMATIONS ── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.scene-enter').forEach(el => obs.observe(el));
+
+/* ── FORMS ── */
+function handleForm(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.textContent = 'Message Sent';
+  btn.style.background = '#27a85a';
+  setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; e.target.reset(); }, 3200);
+}
+function handleNewsletter(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  btn.textContent = 'Subscribed';
+  setTimeout(() => { btn.textContent = 'Subscribe'; e.target.reset(); }, 3000);
+}
 </script>
 </body>
 </html>
