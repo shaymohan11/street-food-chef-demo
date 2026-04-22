@@ -275,6 +275,8 @@
     .food-img { aspect-ratio: 4/3; overflow: hidden; }
     .food-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
     .food-card:hover .food-img img { transform: scale(1.05); }
+    .food-img.no-pic { display:flex; align-items:center; justify-content:center; background:rgba(255,248,231,.03); border-bottom:1px solid var(--border); }
+    .food-img.no-pic span { color:rgba(255,248,231,.22); font-size:.72rem; font-family:'DM Sans',sans-serif; letter-spacing:.14em; text-transform:uppercase; font-weight:500; }
     .food-info { padding: 18px; }
     .food-info h3 { font-family: 'Anton', sans-serif; font-size: 1.1rem; color: var(--text); margin-bottom: 7px; letter-spacing: .02em; }
     .food-info p { font-size: .84rem; color: var(--muted); line-height: 1.55; margin-bottom: 10px; }
@@ -628,9 +630,7 @@
         </div>
       </div>
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1764950446094-HFZIX3PE1FPOAD04FST6/IMG_5167.JPG?format=750w" alt="Pulled Pork Burrito" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>Pulled Pork Burrito</h3>
           <p>Slow-cooked Moss Valley pork, roasted peppers, fresh jalape&ntilde;os, rice, salsa</p>
@@ -638,9 +638,7 @@
         </div>
       </div>
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1762267707656-8CHWY76YXVLDYLBLC8C3/small%2Bplate.jpg?format=750w" alt="Veggie Burrito" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>Veggie Burrito</h3>
           <p>Spiced black beans, roasted veg, cheese, pico de gallo, sour cream</p>
@@ -648,9 +646,7 @@
         </div>
       </div>
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/9ee2cbc1-49df-41a6-811c-c74893b68412/E4ACCEA3-526D-458D-8318-A162C6423BB8.jpg?format=750w" alt="Vegan Burrito" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>Vegan Burrito</h3>
           <p>Black beans, roasted sweet potato, fresh salsa, pickled jalape&ntilde;os &mdash; no compromises</p>
@@ -658,9 +654,7 @@
         </div>
       </div>
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/e9c961f1-131e-4b7c-8daa-9f084904d1d2/Section+1.png?format=750w" alt="Naked Bowl" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>Naked Bowl</h3>
           <p>All the flavour, no wrap &mdash; burrito fillings over rice or salad</p>
@@ -681,9 +675,7 @@
         </div>
       </div>
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1676028147978-55RO6XW675SLR74433B9/The+Street+Food+Chef+chicken+tinga+plate?format=750w" alt="Beef Barbacoa Taco" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>Beef Barbacoa Taco</h3>
           <p>Moss Valley slow-cooked beef, radish, crispy onion, lime</p>
@@ -691,9 +683,7 @@
         </div>
       </div>
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/d3558a10-65f8-4952-af7b-630af498995c/Section+2.png?format=750w" alt="Fish Taco" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>Crispy Fish Taco</h3>
           <p>Beer-battered fish, chipotle mayo, purple cabbage, lime</p>
@@ -701,9 +691,7 @@
         </div>
       </div>
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/ba38b4df-5bd4-4c12-b69e-bfbf33bc5503/Section+3.png?format=750w" alt="Veggie Taco" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>Veggie Taco</h3>
           <p>Black beans, roasted peppers, avocado, fresh salsa, pickled red onion</p>
@@ -715,9 +703,7 @@
     <!-- QUESADILLAS -->
     <div class="food-grid" id="cat-quesadillas">
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1765209460444-Q55QGSQW3XZJ8HIKKBCA/Untitled-3.PNG?format=750w" alt="Chicken Quesadilla" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>Chicken &amp; Cheddar</h3>
           <p>Grilled chicken, three-cheese blend, roasted peppers, house salsa</p>
@@ -725,9 +711,7 @@
         </div>
       </div>
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1763994857166-XHJ3ZVE5LR4S4VV5SLC9/SFC%2BBurrito.jpg?format=750w" alt="Cheese Jalapeño Quesadilla" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>Cheese &amp; Jalape&ntilde;o</h3>
           <p>Three-cheese pull, fresh jalape&ntilde;os, roasted garlic, crema</p>
@@ -735,9 +719,7 @@
         </div>
       </div>
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/d662e9d5-8a85-469e-87d3-8be45d5f8189/The+Street+Food+Chef%2C+Sheffield%2C+Classic+Silver+Bullet+Burrito?format=750w" alt="BBQ Beef Quesadilla" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>BBQ Beef &amp; Cheese</h3>
           <p>Slow-braised Moss Valley beef, melted cheese, chipotle</p>
@@ -749,9 +731,7 @@
     <!-- SIDES -->
     <div class="food-grid" id="cat-sides">
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1762267707656-8CHWY76YXVLDYLBLC8C3/small%2Bplate.jpg?format=750w" alt="House Guacamole" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>House Guacamole</h3>
           <p>Hand-mashed daily. Avocado, lime, coriander, a little heat.</p>
@@ -759,9 +739,7 @@
         </div>
       </div>
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1676028147978-55RO6XW675SLR74433B9/The+Street+Food+Chef+chicken+tinga+plate?format=750w" alt="Chunky Chips" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>Chunky Chips</h3>
           <p>Thick-cut and golden. Add salsa or sour cream on the side.</p>
@@ -769,9 +747,7 @@
         </div>
       </div>
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/e9c961f1-131e-4b7c-8daa-9f084904d1d2/Section+1.png?format=750w" alt="Pico de Gallo" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>Pico de Gallo</h3>
           <p>Sheffield&rsquo;s freshest tomato salsa. Made every morning.</p>
@@ -779,9 +755,7 @@
         </div>
       </div>
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/9ee2cbc1-49df-41a6-811c-c74893b68412/E4ACCEA3-526D-458D-8318-A162C6423BB8.jpg?format=750w" alt="Yee Kwan Ice Cream" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>Yee Kwan Ice Cream</h3>
           <p>Yorkshire-made. Salted caramel or dark chocolate.</p>
@@ -793,9 +767,7 @@
     <!-- DRINKS -->
     <div class="food-grid" id="cat-drinks">
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/d3558a10-65f8-4952-af7b-630af498995c/Section+2.png?format=750w" alt="Margarita Slush" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>Margarita Slush</h3>
           <p>Classic lime or strawberry. The only way to end a burrito.</p>
@@ -803,27 +775,21 @@
         </div>
       </div>
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/ba38b4df-5bd4-4c12-b69e-bfbf33bc5503/Section+3.png?format=750w" alt="Mexican Lager" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>Mexican Lager</h3>
           <p>Ice-cold Modelo or Sol. With a wedge, obviously.</p>
         </div>
       </div>
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1764950446094-HFZIX3PE1FPOAD04FST6/IMG_5167.JPG?format=750w" alt="House Wine" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>House Wine</h3>
           <p>Red, white or ros&eacute;. Bottled for the table.</p>
         </div>
       </div>
       <div class="food-card scene-enter">
-        <div class="food-img">
-          <img src="https://images.squarespace-cdn.com/content/v1/63c928f154f03c1ff72bdcd3/1763994857166-XHJ3ZVE5LR4S4VV5SLC9/SFC%2BBurrito.jpg?format=750w" alt="Tequila and Soft Drinks" loading="lazy" />
-        </div>
+<div class="food-img no-pic"><span>No Picture</span></div>
         <div class="food-info">
           <h3>Tequila &amp; Soft Drinks</h3>
           <p>Full selection of soft drinks, juices, and tequila at the bar.</p>
